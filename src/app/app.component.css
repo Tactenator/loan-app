@@ -2,3 +2,13 @@
     background-color: grey;
     height: 90vh; 
 }
+
+.toolbar {
+   background-color:#1A472A;
+   font-size: 1.5rem; 
+   color: #fff;    
+}
+
+.nav-links button {
+    font-size: 1rem; 
+}
