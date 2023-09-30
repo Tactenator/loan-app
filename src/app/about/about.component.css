@@ -1,0 +1,8 @@
+.about-container {
+    text-align: center;
+}
+
+.about-info p {
+    margin: 0 auto; 
+    width: 50%; 
+}
