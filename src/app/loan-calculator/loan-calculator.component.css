@@ -2,43 +2,52 @@
     background-color: #5d5d5d;
 }
 
+.input {
+    color: #fff;
+}
+
 .details {
     color: white;
     font-size: 48px;
 }
   
-  .loan-summary {
+.loan-summary {
     padding: 20px;
-  }
-  
-  .msg-error {
+}
+
+.msg-error {
     color: #dc000b;
     background-color: #ffcec7;
     border-radius: 5px;
     padding: 1rem 1rem;
     display: flex; 
     flex-direction: row; 
-  }
+}
 
-  .error-icon {
+.error-icon {
     padding-right: 10px;
-  }
+}
 
-  .loan-summary {
+.loan-summary {
     display: flex; 
     flex-direction: column; 
     text-align: center;
     gap: 1rem; 
-  }
+}
 
-  .clear-button {
+.clear-button {
     background-color: #2a623d;
     border: none; 
     padding: 0.5rem; 
     color: white; 
-  }
+}
 
-  .clear-button:hover {
+.clear-button:hover {
     cursor: pointer; 
     background-color:  #1A472A;
-  }
+}
+
+.hr-line {
+    width: 60%; 
+    text-align: center;
+}

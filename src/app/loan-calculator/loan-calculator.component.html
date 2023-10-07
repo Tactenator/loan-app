@@ -14,9 +14,9 @@
           </div>
         
         <label>Loan Amount: </label>
-        <mat-form-field fxFlex appearance="outline" >
-        <mat-label>Ex: 42500.00</mat-label>
-        <input required type="text" name="loanAmount" id="textLoanAmount" formControlName="loanAmount" matInput/>
+        <mat-form-field fxFlex appearance="outline">
+            <mat-label class="input">Ex: 42500.00</mat-label>
+            <input required type="text" name="loanAmount" formControlName="loanAmount" matInput/>
         </mat-form-field>
           <div *ngIf="form['numOfYears'].errors && form['numOfYears'].touched">
   
@@ -29,7 +29,7 @@
           </div>
           <label>Length of Loan (Years)</label>
           <mat-form-field fxFlex appearance="outline" >
-            <mat-label>Ex: 4</mat-label>
+            <mat-label class="input">Ex: 4</mat-label>
             <input required type="text" name="numOfYears"  matInput formControlName="numOfYears" />
           </mat-form-field>
 
@@ -42,7 +42,7 @@
 
           <label>Interest Rate</label>
           <mat-form-field fxFlex appearance="outline">
-            <mat-label>Ex: 3.0</mat-label>
+            <mat-label class="input">Ex: 3.0</mat-label>
             <input required type="text" name="InterestRate" matInput formControlName="interestRate" />
           </mat-form-field>
             <button [disabled]="!loanForm.valid" type="submit" mat-raised-button color="accent" (click)="calculateResults()">Calculate</button>
@@ -59,7 +59,7 @@
           
             <h3>You Monthly Payment: </h3>
             <app-loan-details [monthlyPayment]="monthlyPayment" class="details"></app-loan-details>
-            <hr style="width: 60%; text-align: center;" />
+            <hr class="hr-line" style="width: 60%; text-align: center;" />
             <h3>Total interest paid:</h3>
             <app-interest-details [interestPaid]="interestPaid" class="details"></app-interest-details>
             <br /><br /><br />
