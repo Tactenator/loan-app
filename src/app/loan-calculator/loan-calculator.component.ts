@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoanCalculatorComponent {
   loanForm: FormGroup;
 
+  //payment and interest initialized to prevent UI displaying 'null' on load
   monthlyPayment: number = 0;
   interestPaid: number = 0;
   loanAmount: number;
@@ -20,6 +21,7 @@ export class LoanCalculatorComponent {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    //initializes form group using validators
     this.loanForm = this.fb.group({
       loanAmount: ['',[ Validators.required, Validators.pattern('^-?[0-9]\\d*(\\.\\d{1,2})?$')]],
       numOfYears: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
@@ -31,30 +33,19 @@ export class LoanCalculatorComponent {
     return this.loanForm.controls;
   };
 
-  calculateResults() {
-    // Create a variable that hold the loan amount entered by user.
+  calculatePayments() {
+    //intializes variables 
     let loanAmount = parseFloat(this.loanForm.value.loanAmount);
-
-    // Create a variable that holds the loan term in years entered by the user.
     let numOfYears = parseFloat(this.loanForm.value.numOfYears);
-
-    // Create a variable that holds the interest rate entered by the user.
     let interestRate = parseFloat(this.loanForm.value.interestRate);
-
-    // create a variable with the value of the interest rate per month as a decimal.
-    let i = ((interestRate / 100) / 12);
-
-    // Create a variable the loan term in months.
+    let actualRate = ((interestRate / 100) / 12);
     let numOfMonths = (numOfYears * 12);
-
-    // Calculate the monthly payment based on values entered by the user.
-    this.monthlyPayment = (((loanAmount * i * Math.pow((1 + i), numOfMonths)))/((Math.pow((1 + i), numOfMonths)) - 1));
-
-    // Calculate the total interest paid that will have to be paid based on values entered by the user user.
+    //calculates monthly payment
+    this.monthlyPayment = (((loanAmount * actualRate * Math.pow((1 + actualRate), numOfMonths)))/((Math.pow((1 + actualRate), numOfMonths)) - 1));
+    //calculates interest paid
     this.interestPaid = ((this.monthlyPayment * numOfMonths) - loanAmount);
   }
 
-  // Clear form and reset interest paid and monthly payment values back to 0
   clearForm() {
     this.loanForm.reset();
     this.interestPaid = 0;

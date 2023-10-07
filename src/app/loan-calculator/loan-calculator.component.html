@@ -45,7 +45,7 @@
             <mat-label class="input">Ex: 3.0</mat-label>
             <input required type="text" name="InterestRate" matInput formControlName="interestRate" />
           </mat-form-field>
-            <button [disabled]="!loanForm.valid" type="submit" mat-raised-button color="accent" (click)="calculateResults()">Calculate</button>
+            <button [disabled]="!loanForm.valid" type="submit" mat-raised-button color="accent" (click)="calculatePayments()">Calculate</button>
           </form>
         </mat-card-content>
       </mat-card>
