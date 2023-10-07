@@ -1,3 +1,10 @@
+/**
+ * Name: Trevor McLaurine
+ * Date: 10/7/2023
+ * Assignment: Loan App
+ * File: loan-calculator.component.ts
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 

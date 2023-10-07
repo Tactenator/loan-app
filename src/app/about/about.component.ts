@@ -1,3 +1,9 @@
+/**
+ * Name: Trevor McLaurine
+ * Date: 10/7/2023
+ * Assignment: Loan App
+ * File: about.component.ts
+ */
 import { Component } from '@angular/core';
 
 @Component({
